@@ -1,14 +1,12 @@
-
 div{
-	font:
-	font-size:20px;
+	font-size: 20px;
 	font-weight: 500;
 	font-family: "Lucida Console", Monaco, monospace;
 	text-align: center;
 	z-index: 0;
 	position: absolute;
-	left:200px;
-	top: 381px;
+	left: 215px;
+	top: 359px;
 	width: 1000px;
 	height: 198px;
 	box-decoration-break: clone;
@@ -17,8 +15,8 @@ h2{
 	text-align: center;
 	z-index: 0;
 	position: absolute;
-	left: 407px;
-	top: 332px;
+	left: 404px;
+	top: 312px;
 	width: 516px;
 	height: 65px;
 	box-decoration-break: clone;
