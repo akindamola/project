@@ -1,14 +1,13 @@
-var position = 0;
+var position =0;
 var test ;
-var level ;
+var level;
 var question ;
 var choice ;
 var choices ;
 var optA ;
 var optB ;
 var optC ;
-var correctAns = 0;
-var timer;
+var correctAns =0;
 var questions = [
     ["The intersecting lines drawn on maps and globes are", "Longitude", "Latitude", "Geographic grids", "C"],
     ["The largest production of mica in Asia is from", "Mynammar", "India", "Malaysia", "B"],
@@ -33,16 +32,13 @@ var questions = [
 function callItem(x) {
     return document.getElementById(x);
 }
-function setTimeOut(){
-
 
 function showQuestion() {
     test = callItem("test");
     if (position >= questions.length) {
         callItem("test").innerHTML = "Quiz completed";
-        test.innerHTML += "<p><strong> You got " + correctAns + " of " + questions.length + " questions correct </strong></p>";
-        
-        
+        test.innerHTML += "<p> You got " + correctAns + " of " + questions.length + " correct</p>";
+        window.clearInterval(timer);
         position = 0;
         correctAns = 0;
         return false;
@@ -59,9 +55,7 @@ function showQuestion() {
     test.innerHTML += "<input type= 'radio' name= 'choices' value='C' > " + optC + "<br><br>";
     test.innerHTML += "<button onclick= 'checkAnswer()' style='height:50px; width:300px'>Submit Answer</button>";
 }
-
-
- 
+var timer = window.setInterval(checkAnswer, 60000);
 function checkAnswer() {
     choices = document.getElementsByName("choices");
     for (var i = 0; i < choices.length; i++) {
@@ -70,10 +64,10 @@ function checkAnswer() {
         }
     }
     if (choice == questions[position][4]) {
-        correctAns++;
+        correctAns= correctAns+ 1;
     }
     position++;
     showQuestion();
-
 }
+
 window.addEventListener("load", showQuestion, false);
