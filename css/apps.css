@@ -1,17 +1,24 @@
 div{
+    background-color: rgba(200,10,20,0.05);
+    border-radius: 40px;
+    border: 7px solid white;
+    background-image: url(img/pix.jpg);
+    margin: 0 auto;
 	font-size: 20px;
 	font-weight: 500;
-	font-family: "Lucida Console", Monaco, monospace;
+	font-family: cursive;
 	text-align: center;
 	z-index: 0;
 	position: absolute;
-	left: 215px;
+	left: 280px;
 	top: 359px;
-	width: 1000px;
-	height: 198px;
+	width: 800px;
+	height: 300px;
 	box-decoration-break: clone;
 }
 h2{
+   
+    margin: 0 auto;
 	text-align: center;
 	z-index: 0;
 	position: absolute;

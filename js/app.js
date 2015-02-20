@@ -1,12 +1,12 @@
 var position = 0;
-var test = 0;
-var level = 0;
-var question;
-var choice = 0;
-var choices = 0;
-var optA = 0;
-var optB = 0;
-var optC = 0;
+var test ;
+var level ;
+var question ;
+var choice ;
+var choices ;
+var optA ;
+var optB ;
+var optC ;
 var correctAns = 0;
 var questions = [
     ["The intersecting lines drawn on maps and globes are", "Longitude", "Latitude", "Geographic grids", "C"],
@@ -14,7 +14,7 @@ var questions = [
     ["The last major glacial period began about 2,000,000 years before present and is commonly known as", "Pleistocene age", "Paleocene age", "Holocene age", "A"],
     ["Which of the following is a prime number ?", "9", "4", "2", "C"],
     ["What is the largest 4 digit number exactly divisible by 88?", "9944", "9988", "9990", "A"],
-    ["All prime numbers are odd numbers?", "TRUE", "FALSE", "CANT SAY", "A"],
+    ["All prime numbers are odd numbers?", "TRUE", "FALSE", "CANT SAY", "B"],
     ["(719 × 719 + 347 × 347 − 719 × 347) / (719 × 719 × 719 + 347 × 347 × 347)=?", "1/372", "25/133", "1/1066", "C"],
     ["Look at this series: 2, 1, (1/2), (1/4), ... What number should come next?", "(1/3)", "(1/8)", "(2/8)", "B"],
     ["Look at this series: 7, 10, 8, 11, 9, 12, ... What number should come next?", "10", "15", "16", "A"],
@@ -36,20 +36,20 @@ function callItem(x) {
 function showQuestion() {
     test = callItem("test");
     if (position >= questions.length) {
-
-        test.innerHTML = "<h9 ><strong> You got " + correctAns + " of " + questions.length + " correct </strong> </h9>";
-        callItem("level").innerHTML = "Quiz completed";
+        callItem("test").innerHTML = "Quiz completed";
+        test.innerHTML += "<p><strong> You got " + correctAns + " of " + questions.length + " correct </strong></p>";
+        
         position = 0;
         correctAns = 0;
         return false;
     }
-    callItem("level").innerHTML = "Question " + (position + 1) + " of " + questions.length;
+    callItem("test").innerHTML = "Question " + (position + 1) + " of " + questions.length;
     question = questions[position][0];
     optA = questions[position][1];
     optB = questions[position][2];
     optC = questions[position][3];
 
-    test.innerHTML = "<h3 align='center'>" + question + "</h3>";
+    test.innerHTML += "<h3 align='center'>" + question + "</h3>";
     test.innerHTML += "<input  type= 'radio' name= 'choices' value='A' style='vertical-align: middle'  > " + optA + "<br>";
     test.innerHTML += "<input type= 'radio' name= 'choices' value='B' > " + optB + "<br>";
     test.innerHTML += "<input type= 'radio' name= 'choices' value='C' > " + optC + "<br><br>";
