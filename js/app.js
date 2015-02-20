@@ -8,6 +8,7 @@ var optA ;
 var optB ;
 var optC ;
 var correctAns = 0;
+var timer;
 var questions = [
     ["The intersecting lines drawn on maps and globes are", "Longitude", "Latitude", "Geographic grids", "C"],
     ["The largest production of mica in Asia is from", "Mynammar", "India", "Malaysia", "B"],
@@ -32,6 +33,8 @@ var questions = [
 function callItem(x) {
     return document.getElementById(x);
 }
+function setTimeOut(){
+
 
 function showQuestion() {
     test = callItem("test");
@@ -57,6 +60,8 @@ function showQuestion() {
     test.innerHTML += "<button onclick= 'checkAnswer()' style='height:50px; width:300px'>Submit Answer</button>";
 }
 
+
+ 
 function checkAnswer() {
     choices = document.getElementsByName("choices");
     for (var i = 0; i < choices.length; i++) {
@@ -69,5 +74,6 @@ function checkAnswer() {
     }
     position++;
     showQuestion();
+
 }
 window.addEventListener("load", showQuestion, false);
