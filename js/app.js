@@ -37,7 +37,8 @@ function showQuestion() {
     test = callItem("test");
     if (position >= questions.length) {
         callItem("test").innerHTML = "Quiz completed";
-        test.innerHTML += "<p><strong> You got " + correctAns + " of " + questions.length + " correct </strong></p>";
+        test.innerHTML += "<p><strong> You got " + correctAns + " of " + questions.length + " questions correct </strong></p>";
+        
         
         position = 0;
         correctAns = 0;
